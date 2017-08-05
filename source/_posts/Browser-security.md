@@ -1,12 +1,12 @@
 ---
-title: 简易的 socks5 代理
-date: 2017-08-05 08:16:31
-tags:
+title: 浏览器安全
+date: 2017-04-03 08:16:31
+tags: 安全
 ---
 
-## 0x00 同源策略
+#### 同源策略
 
-> 同源策略：限制来自不同 “document” 或脚本，互相读取或修改。
+同源策略：限制来自不同 “document” 或脚本，互相读取或修改。
 
 区别：不同子域名、端口、协议, 不同源
 
@@ -28,7 +28,8 @@ Flash 主要通过网站提供的 crossdomain.xml 文件判断是否允许跨域
 
 IE8 CSS 跨域漏洞，@import 把 html 当成 CSS 加载导致
 
-- a.html
+a.html
+
 ```html
 <html>
 <head>
@@ -41,7 +42,7 @@ IE8 CSS 跨域漏洞，@import 把 html 当成 CSS 加载导致
 </html>
 ```
 
-- b.html 的代码
+b.html 的代码
 
 ```html
 <html>
@@ -62,7 +63,7 @@ IE8 CSS 跨域漏洞，@import 把 html 当成 CSS 加载导致
 </html>
 ```
 
-## 0x01 浏览器沙箱
+#### 浏览器沙箱
 
     chrome 架构：
     
@@ -79,22 +80,24 @@ IE8 CSS 跨域漏洞，@import 把 html 当成 CSS 加载导致
 
 sandbox: 限制不可信代码在一定环境，隔离外部资源；如果一定要跨越 sandbox 边界交换数据，则只能通过 API
 
-## 0x02 恶意网址拦截
+#### 恶意网址拦截
 
->原理：周期性从服务器获取一份恶意黑名单
+原理：周期性从服务器获取一份恶意黑名单
 
 “挂马”会在一个正常的网页中通过 &lt;script&gt; 或者 &lt;iframe&gt; 等标签加载一个恶意网址
 
-## 0x03 高速发展的浏览器安全
+#### 高速发展的浏览器安全
 
-> CSP(Content Security Ploicy)：服务器返回一个 HTTP 头，并在其中描述应该遵守的安全策略
+CSP(Content Security Ploicy)：服务器返回一个 HTTP 头，并在其中描述应该遵守的安全策略
 
 使用 CSP 的方法，插入一个 HTTP 返回头：
+
 ```html
 X-Content-Sevurity-Policy: policy
 ```
 
 其中 policy 的描述及其灵活，比如：
+
 ```html
 X-Content-Sevurity-Policy: allow 'self' *.mydomain.com
 ```
