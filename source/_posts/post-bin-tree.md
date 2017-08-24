@@ -20,9 +20,10 @@ struct TreeNode {
 ```c++
 void preOrder(TreeNode * root) {
     if(!root) return;
-    preOrder(root->left);
-    cout << root->val << ' ';
+    preOrder(root->left); 
     preOrder(root->right);
+    cout << root->val << ' ';
+}
 ```
 
 二叉树的后序非递归算法是三种遍历方式中最复杂的一种，其思路如下：

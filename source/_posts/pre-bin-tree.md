@@ -24,6 +24,7 @@ void preOrder(TreeNode * root) {
     cout << root->val << ' ';
     preOrder(root->left);
     preOrder(root->right);
+}
 ```
 
 二叉树的前序非递归算法稍微复杂一点，其思路如下：
